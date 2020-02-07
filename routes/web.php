@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index');
 
-Route::get('/login', function () {
-    return 'login';
-})->name('login');
+Route::get('/auth/login', 'PagesController@login');
+Route::get('/auth/register', 'PagesController@register');
+Route::get('/auth/reset', 'PagesController@reset');
